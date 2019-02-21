@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora</title>
+  <link rel="stylesheet" type="text/css" href="calculadora.css">
+  <script type="text/javascript" src="calc.js"></script>
+  <script type="text/javascript" src="frontclass/calculadora.js"></script>
+    </head>
+<body>
+
+  <div id="contenedor" class="contenedor">
+        <div class="numeros" id="n1"></div>
+            <div>     
+                <button type="button" class="b1" onclick="num(7)" id="b1">7</button>
+                <button type="button" class="b1" onclick="num(8)" id="b1">8</button>
+                <button type="button" class="b1" onclick="num(9)" id="b1">9</button>
+                <button type="button" class="b1" onclick="lec('/')" id="b1">/</button>
+            </div>
+            <div>     
+                <button type="button" class="b1" onclick="num(4)" id="b1">4</button>
+                <button type="button" class="b1" onclick="num(5)" id="b1">5</button>
+                <button type="button" class="b1" onclick="num(6)" id="b1">6</button>
+                <button type="button" class="b1" onclick="lec('*')" id="b1">*</button>
+            </div>
+            <div>     
+                <button type="button" class="b1" onclick="num(1)" id="b1">1</button>
+                <button type="button" class="b1" onclick="num(2)" id="b1">2</button>
+                <button type="button" class="b1" onclick="num(3)" id="b1">3</button>
+                <button type="button" class="b1" onclick="lec('-')" id="b1">-</button>
+              
+            </div>
+
+      <div>     
+          
+       <button type="button" class="b0" onclick="num(0)" id="b1">0</button>
+       <button type="button" class="b1" onclick="lec('+')" id="b1">+</button>
+            <button type="button" class="b_ig" onclick="igual()" id="b1">=</button>
+</div>
+
+    </div>
+
+    
+<script>
+    let signo="";
+
+let _numero1=0;
+let _numero2=0;
+    function igual(){
+
+        _numero2=Number(nums);
+let coinstanciada = new opcion(_numero1,_numero2);
+    
+    switch(signo){
+            case"+":
+    //document.getElementById("n1").innerHTML=coinstanciada.sumar();
+     coinstanciada.Sumar().then(function(response){
+        nums=document.getElementById("n1");
+        document.getElementById("n1").innerHTML=response;
+    },function (error){
+        document.getElementById("n1").innerHTML="hice algo mal :("
+    });
+            break;
+            case"-":
+           // document.getElementById("n1").innerHTML=coinstanciada.restar();
+
+             coinstanciada.restar().then(function(response){
+        document.getElementById("n1").innerHTML=response;
+    },function (error){
+        document.getElementById("n1").innerHTML="hice algo mal :("
+    });
+            break;
+            case"*":
+           // document.getElementById("n1").innerHTML=coinstanciada.multiplicar();
+             coinstanciada.multiplicar().then(function(response){
+        document.getElementById("n1").innerHTML=response;
+    },function (error){
+        document.getElementById("n1").innerHTML="hice algo mal :("
+    });
+            break;
+            case"/":
+            //document.getElementById("n1").innerHTML=coinstanciada.dividir();
+             coinstanciada.dividir().then(function(response){
+        document.getElementById("n1").innerHTML=response;
+    },function (error){
+        document.getElementById("n1").innerHTML="hice algo mal :("
+    });
+            break;
+    }
+        
+    }
+   
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+.contenedor{
+    height: 240px;
+    width: 215px;
+    background-color: darkseagreen;
+    margin-left: 45%;
+    margin-top: 5%;
+    
+}
+button{
+    height: 50px;
+    width: 50px;
+}
+.b0{
+   height: 50px;
+    width: 104px; 
+}
+.numeros{
+     height: 35px;
+    width: 215px;
+    background-color:aquamarine;
+}
